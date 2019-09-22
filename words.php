@@ -10,14 +10,15 @@
 
     $rack = $routes[1];
 
-    echo json_encode($rack);
+
     $words = array();
 
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
-
+    $choose_letter = substr($rack,0,1);
+    echo json_encode($choose_letter);
     //for ($i = 0; $i < strlen($rack-1; $i++){
     //  for ($j = 1; $j <= (strlen($rack)-$i); $j++){
     //    $choose_letter = substr($rack,$i,$j);
