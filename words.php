@@ -27,7 +27,7 @@
         $statement = $dbhandle->prepare($query);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $words = array_merge($results, $words.words);
+        $words = array_merge($results, $words);
 
         }
       }
