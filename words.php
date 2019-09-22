@@ -14,20 +14,23 @@
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
+    $i=0; %j=1;
+    $choose_letter = substr($rank,$i,$j);
+    echo json_encode($choose_letter);
+    $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
+    $statement = $dbhandle->prepare($query);
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //echo json_encode($results);
+    $words = array_merge($words,$results);
 
-    for ($i = 0; $i < strlen($rank)-1; $i++){
-      for ($j = 1; $j <= (strlen($rank)-$i); $j++){
-        $choose_letter = substr($rank,$i,$j);
-        echo json_encode($choose_letter);
-        $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
-        $statement = $dbhandle->prepare($query);
-        $statement->execute();
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        //echo json_encode($results);
-        $words = array_merge($words,$results);
 
-      }
-    }
+    //for ($i = 0; $i < strlen($rank)-1; $i++){
+    //  for ($j = 1; $j <= (strlen($rank)-$i); $j++){
+
+
+    //  }
+  //  }
 
 
 
