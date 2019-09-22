@@ -21,12 +21,12 @@ var get_words = function(rack){
   var words_request = new XMLHttpRequest();
   words_request.onload = function(){
       if (this.status == 200){
-        //console.log(this.response);
+        console.log(this.response);
         //showLetters(JSON.parse(this.response));
       }
       else console.log("No response");
   };
-  words_request.open("GET", "words.php/${rack}");
+  words_request.open("GET", "words.php/"+rack);
   words_request.send();
 }
 
