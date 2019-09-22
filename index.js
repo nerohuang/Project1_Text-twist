@@ -4,7 +4,7 @@ var get_letters = function(){
     rack_request.onload = function(){
         if (this.status == 200){
           //console.log(this.response);
-          showLetters(JSON.parse(this.response));
+          show_letters(JSON.parse(this.response));
         }
         else console.log("No response");
     };
