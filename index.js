@@ -6,7 +6,7 @@ var getLetters = function(){
     var rack_request = new XMLHttpRequest();
     rack_request.onload = function(){
         if (this.status == 200){
-          console.log(this.response);
+          //console.log(this.response);
           showLetters(JSON.parse(this.response));
         }
         else console.log("No response");
@@ -17,6 +17,7 @@ var getLetters = function(){
 
 var showLetters = function(rack_get){
     let letters = document.getElementById("showletter");
+    console.log(rack_get.rack);
     letters.innerText = rack_get.rack;
     //get_words(rack_get);
 }
