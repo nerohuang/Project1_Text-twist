@@ -17,22 +17,22 @@
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
-    $choose_letter = substr($rack,0,1);
-    $query = "SELECT words FROM racks WHERE rack='$choose_letter'";
 
-    echo json_encode($query);
-    //for ($i = 0; $i < strlen($rack-1; $i++){
-    //  for ($j = 1; $j <= (strlen($rack)-$i); $j++){
-    //    $choose_letter = substr($rack,$i,$j);
-//
-    //    $query = "SELECT words FROM racks WHERE rack='$choose_letter'";
-    //    $statement = $dbhandle->prepare($query);
-    //    $statement->execute();
-    //    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-    //    $words = array_merge($results,$words);
-//
-    //    }
-    //  }
+
+    for ($i = 0; $i < (strlen($rack)-1); $i++){
+      for ($j = 1; $j <= (strlen($rack)-$i); $j++){
+        $choose_letter = substr($rack,$i,$j);
+
+        $query = "SELECT words FROM racks WHERE rack='$choose_letter'";
+        $statement = $dbhandle->prepare($query);
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $words = array_merge($results,$words);
+
+        }
+      }
+
+
 
 
 
@@ -53,6 +53,6 @@
     //this lets the browser know to expect json
     header('Content-Type: application/json');
     //this creates json and gives it back to the browser
-    //echo json_encode(current($words));
+    echo json_encode(current($words));
 
 ?>
