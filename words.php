@@ -8,7 +8,6 @@
     $routes = explode("/", $uri);
 
     $rack = $routes[1];
-    echo json_encode($rack);
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
@@ -21,11 +20,11 @@
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $words = array_merge($words,$results);
-        //echo json_encode($words)
+
       }
     }
 
-
+    echo json_encode($words);
 
 
     //this next line could actually be used to provide user_given input to the query to
