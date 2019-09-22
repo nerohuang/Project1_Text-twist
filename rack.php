@@ -3,9 +3,6 @@
     $dbhandle = new PDO("sqlite:scrabble.sqlite") or die("Failed to open DB");
     if (!$dbhandle) die ($error);
 
-    $request = $_SERVER['REQUEST_METHOD'];
-    $uri = $_SERVER['PATH_INFO'];
-    $routes = explode("/", $uri);
 
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.

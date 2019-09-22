@@ -10,7 +10,8 @@ var getLetters = function(){
     var xhr = new XMLHttpRequest();
     xhr.onload = function(){
         if (this.status == 200){
-            showLetters(JSON.parse(this.response));
+          console.log(this.response);
+          showLetters(JSON.parse(this.response));
         }
         else console.log("No response");
     };
