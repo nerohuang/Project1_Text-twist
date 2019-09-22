@@ -26,7 +26,7 @@ var get_words = function(rack){
       }
       else console.log("No response");
   };
-  words_request.open("GET", "words.php/"+rack);
+  words_request.open("GET", "words.php/{$rack}");
   words_request.send();
 }
 
