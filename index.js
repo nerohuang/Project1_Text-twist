@@ -17,8 +17,8 @@ var getLetters = function(){
 
 var showLetters = function(rack_get){
     let letters = document.getElementById("showletter");
-    console.log(rack_get.rack);
-    letters.innerText = rack_get.rack;
+    console.log(rack_get);
+    letters.innerText = rack_get;
     //get_words(rack_get);
 }
 
