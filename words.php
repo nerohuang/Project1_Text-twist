@@ -10,6 +10,7 @@
 
     $rack = $routes[1];
     $words = array();
+    echo json_encode($rack);
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
@@ -47,6 +48,6 @@
     //this lets the browser know to expect json
     header('Content-Type: application/json');
     //this creates json and gives it back to the browser
-    echo json_encode(current($words));
+    //echo json_encode(current($words));
 
 ?>
