@@ -1,5 +1,5 @@
 var showLetters = function(payload){
-    let letters = document.getElementById("letters");
+    let letters = document.getElementById("showletter");
     letters.innerText = payload;
     rackWords(payload);
 
