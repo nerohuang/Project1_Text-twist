@@ -36,5 +36,5 @@ var get_words = function(rack){
 get_letters();
 
 document.getElementById("begin").addEventListener('click', function(){
-    getLetters();
+    get_letters();
 });
