@@ -6,7 +6,7 @@ var getLetters = function(){
     var rack_request = new XMLHttpRequest();
     rack_request.onload = function(){
         if (this.status == 200){
-          //console.log(this.response);
+          console.log(this.response);
           showLetters(JSON.parse(this.response));
         }
         else console.log("No response");
