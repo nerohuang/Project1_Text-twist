@@ -6,14 +6,37 @@
 <body>
 
 <h1>Welcome to Text Twist</h1>
-<div id="word_display">
-</div>
+<input type="button" id="begin" value="Begin the game!">
+<ul id="word_display">
+</ul>
 
 <div id="user_guessing">
   <input type="text" id="guessing_word">
   <input type="button" id="submit_word" value="Submit">
 </div>
 
+<script>
+$(document).ready(function(){
+
+  let showRacks = function(racks){
+    $("#word_display").html('');
+    racks.map(rack=>{
+      $("#word_display").append(`<li>${rack.rack}: <span class="answer hidden">${rack.words}</span></li>`);
+    });
+    $("#word_display li").on("click", function(evt){
+      $(evt.currentTarget).find(".answer").toggleClass("hidden");
+    });
+  }
+
+  $("#begin").on("click", function(){
+    $.ajax({
+        method: "GET",
+        url: "api.php",
+        success: data=>{ showRacks(data)}
+    });
+  });
+});
+</script>
 
 
 </body>
