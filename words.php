@@ -3,15 +3,18 @@
     $dbhandle = new PDO("sqlite:scrabble.sqlite") or die("Failed to open DB");
     if (!$dbhandle) die ($error);
 
+
     $request = $_SERVER['REQUEST_METHOD'];
     $uri = $_SERVER['PATH_INFO'];
     $routes = explode("/", $uri);
 
     $rack = $routes[1];
+    $words = array();
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
+
     for ($i = 0; $i < strlen($rank)-1; $i++){
       for ($j = 1; $j <= (strlen($rank)-$i); $j++){
         $choose_letter = substr($rank,$i,$j);
@@ -19,12 +22,13 @@
         $statement = $dbhandle->prepare($query);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($results);
         $words = array_merge($words,$results);
 
       }
     }
 
-    echo json_encode($words);
+    //echo json_encode($words);
 
 
     //this next line could actually be used to provide user_given input to the query to
