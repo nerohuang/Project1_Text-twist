@@ -16,7 +16,7 @@
     // ordering by rank, etc.
     $i=0; %j=1;
     $choose_letter = substr($rank,$i,$j);
-    echo json_encode($choose_letter);
+
     $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
     $statement = $dbhandle->prepare($query);
     $statement->execute();
@@ -52,4 +52,5 @@
     header('Content-Type: application/json');
     //this creates json and gives it back to the browser
     //echo json_encode(current($words));
+    echo json_encode($choose_letter);
 ?>
