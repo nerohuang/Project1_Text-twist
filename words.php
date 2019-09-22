@@ -22,13 +22,13 @@
         $statement = $dbhandle->prepare($query);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($results);
+        //echo json_encode($results);
         $words = array_merge($words,$results);
 
       }
     }
 
-    //echo json_encode($words);
+    echo json_encode($words);
 
 
     //this next line could actually be used to provide user_given input to the query to
