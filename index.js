@@ -26,7 +26,7 @@ var start = function(){
 
 start();
 
-document.getElementById("begin").addEventListener('click', function(){
+document.getElementById("newLetters").addEventListener('click', function(){
 
     getLetters();
 });
