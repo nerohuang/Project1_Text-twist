@@ -1,7 +1,7 @@
 var showLetters = function(payload){
     let letters = document.getElementById("showletter");
     letters.innerText = payload;
-    rackWords(payload);
+    //rackWords(payload);
 
 }
 
@@ -16,8 +16,6 @@ var getLetters = function(){
     };
     xhr.open("GET", "rack.php/rack");
     xhr.send();
-
-    //rackWords(rack);
 }
 
 var start = function(){
