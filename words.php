@@ -7,8 +7,10 @@
     $request = $_SERVER['REQUEST_METHOD'];
     $uri = $_SERVER['PATH_INFO'];
     $routes = explode("/", $uri);
-    echo json_encode($routes);
+
     $rack = $routes[1];
+
+    echo json_encode($rack);
     $words = array();
 
     //this is a sample query which gets some data, the order by part shuffles the results
