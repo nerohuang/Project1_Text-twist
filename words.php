@@ -18,6 +18,7 @@
     for ($i = 0; $i < strlen($rank)-1; $i++){
       for ($j = 1; $j <= (strlen($rank)-$i); $j++){
         $choose_letter = substr($rank,$i,$j);
+        echo json_encode($choose_letter);
         $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
         $statement = $dbhandle->prepare($query);
         $statement->execute();
@@ -28,7 +29,7 @@
       }
     }
 
-    echo json_encode($words);
+
 
 
     //this next line could actually be used to provide user_given input to the query to
