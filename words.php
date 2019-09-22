@@ -9,7 +9,7 @@
     $routes = explode("/", $uri);
 
     $rack = $routes[1];
-    $words = array();
+    //$words = array();
     echo json_encode($rack);
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.
