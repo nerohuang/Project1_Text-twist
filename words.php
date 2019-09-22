@@ -18,7 +18,9 @@
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
     $choose_letter = substr($rack,0,1);
-    echo json_encode($choose_letter);
+    $query = "SELECT words FROM racks WHERE rack='$choose_letter'";
+
+    echo json_encode($query);
     //for ($i = 0; $i < strlen($rack-1; $i++){
     //  for ($j = 1; $j <= (strlen($rack)-$i); $j++){
     //    $choose_letter = substr($rack,$i,$j);
