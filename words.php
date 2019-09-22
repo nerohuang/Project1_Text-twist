@@ -9,26 +9,21 @@
     $routes = explode("/", $uri);
 
     $rack = $routes[1];
-    //$words = array();
-    echo json_encode($rack);
+    $words = array();
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
 
-
-
-    for ($i = 0; $i < strlen($rack)-1; $i++){
+    for ($i = 0; $i < strlen($rack-1; $i++){
       for ($j = 1; $j <= (strlen($rack)-$i); $j++){
-        $i=0; %j=1;
-        $choose_letter = substr('test',$i,$j);
+        $choose_letter = substr($rack,$i,$j);
 
-        $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
+        $query = "SELECT words FROM racks WHERE rack='$choose_letter'";
         $statement = $dbhandle->prepare($query);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        //echo json_encode($results);
-        $words = array_merge($words,$results);
+        $words = array_merge($results,$words);
 
         }
       }
@@ -52,6 +47,6 @@
     //this lets the browser know to expect json
     header('Content-Type: application/json');
     //this creates json and gives it back to the browser
-    //echo json_encode(current($words));
+    echo json_encode(current($words));
 
 ?>
