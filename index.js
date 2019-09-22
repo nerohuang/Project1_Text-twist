@@ -1,6 +1,3 @@
-var start = function(){
-    getLetters();
-}
 
 var get_letters = function(){
     var rack_request = new XMLHttpRequest();
@@ -36,7 +33,7 @@ var get_words = function(rack){
 
 
 
-start();
+get_letters();
 
 document.getElementById("begin").addEventListener('click', function(){
     getLetters();
