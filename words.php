@@ -15,7 +15,7 @@
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
     $i=0; %j=1;
-    $choose_letter = substr($rank,$i,$j);
+    $choose_letter = substr('test',$i,$j);
 
     $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
     $statement = $dbhandle->prepare($query);
