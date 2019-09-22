@@ -27,12 +27,12 @@
         $statement = $dbhandle->prepare($query);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $words = array_merge($words,$results);
+        $words = array_merge($results, $words);
 
         }
       }
 
-
+      PRRU
 
 
 
