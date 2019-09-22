@@ -1,24 +1,24 @@
-
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Text Twist Clone</title>
-    </head>
-    <body>
-        <h1>Text Twist</h1>
-        <h2>Letters: <span id="letters"></span></h2>
-        <input type="button" value="New Letters" id="newLetters">
-        <br>
-        <input type="text" placeholder="Your guess" id="guess"/>
-        <input type="button" value="Submit" id="submitGuess">
-        <br>
-        <div id="wordsLeft">
-        </div>
-        <br>
-        <div>
-            <h3 id="score"></h3>
-        </div>
+<head>
 
-        <script type="text/javascript" src="index.js"></script>
-    </body>
+<title>Text Twist</title>
+</head>
+<body>
 
+<h1>Welcome to Text Twist</h1>
+<input type="button" id="begin" value="Begin the game!">
+<ul id="word_display">
+</ul>
+
+<div id='showletter'>
+</div>
+
+<div id="user_guessing">
+  <input type="text" id="guessing_word">
+  <input type="button" id="submit_word" value="Submit">
+</div>
+
+<script type="text/javascript" src="index.js"></script>
+</body>
 </html>
