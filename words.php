@@ -8,21 +8,24 @@
     $routes = explode("/", $uri);
 
     $rack = $routes[1];
-    echo '<script>console.log("Your stuff here")</script>';
+    echo "<script>console.log('" . json_encode($rack) . "');</script>";
     //this is a sample query which gets some data, the order by part shuffles the results
     //the limit 0, 10 takes the first 10 results.
     // you might want to consider taking more results, implementing "pagination",
     // ordering by rank, etc.
-    for ($i = 0; $i < strlen($rank)-1; $i++){
-      for ($j = 1; $j <= (strlen($rank)-$i); $j++){
-        $choose_letter = substr($rank,$i,$j);
-        $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
-        $statement = $dbhandle->prepare($query);
-        $statement->execute();
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $words = array_merge($words,$results);
-      }
-    }
+  //  for ($i = 0; $i < strlen($rank)-1; $i++){
+  //    for ($j = 1; $j <= (strlen($rank)-$i); $j++){
+  //      $choose_letter = substr($rank,$i,$j);
+  //      $query = "SELECT rack FROM racks WHERE rack='$choose_letter'";
+  //      $statement = $dbhandle->prepare($query);
+  //      $statement->execute();
+  //  //    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //    $words = array_merge($words,$results);
+    //  }
+    //}
+
+
+
 
     //this next line could actually be used to provide user_given input to the query to
     //avoid SQL injection attacks
@@ -40,5 +43,5 @@
     //this lets the browser know to expect json
     header('Content-Type: application/json');
     //this creates json and gives it back to the browser
-    echo json_encode(current($words));
+    //echo json_encode(current($words));
 ?>
