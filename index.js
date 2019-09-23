@@ -103,6 +103,7 @@ document.getElementById("submit_word").addEventListener('click', function(){
   console.log(words_list);
   console.log(words_length);
   console.log(words_length_num);
+  var correct_words='';
   var total_words = words_list.length;
   var user_guess=document.getElementById("guessing_word").value;
   if (words_list.indexOf(user_guess.toUpperCase()) != -1){
@@ -112,9 +113,11 @@ document.getElementById("submit_word").addEventListener('click', function(){
       //console.log(words_length_num[words_length.indexOf(user_guess.length)]--);
       words_length_num[words_length.indexOf(user_guess.length)]--;
       display_words(words_length, words_length_num);
+      correct_words = correct_words + user_guess + '&nbsp&nbsp&nbsp';
+      document.getElementById("correct_word_display").innerText=correct_words;
       words_list.splice(words_list.indexOf(user_guess.toUpperCase()),1);
       total_words--;
-      console.log(total_words);
+      //console.log(total_words);
     }
     else{
       document.getElementById("TOF").innerText='False!';
