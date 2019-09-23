@@ -34,7 +34,7 @@ var get_words = function(rack){
 var store_words = function(words_got){
     words_list = [];
     for(var i = 0; i < words_got.length; i++){
-      console.log(words_got[i].indexOf("@@"));
+      console.log(words_got[i].toString().indexOf("@@"));
       if (words_got[i].indexOf("@@")){
         words_list.push(words_got[i].split("@@"));
       }
