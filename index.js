@@ -71,8 +71,6 @@ var count_words_length = function(words){
 }
 
 var display_words = function(words_length, words_length_num){
-    var note = document.createElement("LI");
-    var br =  document.createElement("BR");
     var text ='';
     for (var i = 0; i < words_length.length; i++){
       //var textnode = document.createTextNode('The length of words:'+words_length[i]+'   The number of words remain:'+words_length_num[i]);
@@ -107,7 +105,10 @@ document.getElementById("submit_word").addEventListener('click', function(){
   console.log(words_length_num);
   var user_guess=document.getElementById("guessing_word").value;
   if (words_list.indexOf(user_guess.toUpperCase()) != -1){
-    console.log('great');
+    document.getElementById("TOF").innerText='Correct!';
+  }
+  else{
+    document.getElementById("TOF").innerText='False!';
   }
   console.log(user_guess);
 });
