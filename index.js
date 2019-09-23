@@ -67,6 +67,7 @@ var count_words_length = function(words){
     }
   //  console.log(words_length);
   //  console.log(words_length_num);
+  display_words(words_length, words_length_num);
 }
 
 var display_words = function(words_length, words_length_num){
@@ -89,10 +90,10 @@ document.getElementById("begin").addEventListener('click', function(){
     words_list = [];
     split_words = [];
     start();
-
-
 });
 
-console.log(words_list[0]);
-console.log(words_length);
-console.log(words_length_num);
+document.getElementById("submit_word").addEventListener('click', function(){
+  console.log(words_list);
+  console.log(words_length);
+  console.log(words_length_num);
+});
