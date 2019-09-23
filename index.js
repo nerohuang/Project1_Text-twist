@@ -3,6 +3,23 @@ var split_words = [];
 var words_length = [];
 var words_length_num=[];
 
+var get_letters = function(){
+    var rack_request = new XMLHttpRequest();
+    rack_request.onload = function(){
+        if (this.status == 200){
+          //console.log(this.response);
+          show_letters(JSON.parse(this.response));
+        }
+        else console.log("No response");
+    };
+    rack_request.open("GET", "rack.php");
+    rack_request.send();
+}
+
+var show_letters = function(rack_get){
+    document.getElementById("showletter").innerText = rack_get.rack;
+    get_words(rack_get.rack);
+}
 
 var get_words = function(rack){
   var words_request = new XMLHttpRequest();
@@ -50,7 +67,6 @@ var count_words_length = function(words){
     }
   //  console.log(words_length);
   //  console.log(words_length_num);
-  display_words(words_length, words_length_num);
 }
 
 var display_words = function(words_length, words_length_num){
@@ -61,10 +77,10 @@ var display_words = function(words_length, words_length_num){
 }
 
 var start = function(){
-    getLetters();
+    get_letters();
 }
 
-start();
+
 
 
 document.getElementById("begin").addEventListener('click', function(){
@@ -72,7 +88,7 @@ document.getElementById("begin").addEventListener('click', function(){
     words_length_num=[];
     words_list = [];
     split_words = [];
-    get_letters();
+    start();
 
 
 });
