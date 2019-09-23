@@ -81,7 +81,7 @@ document.getElementById("begin").addEventListener('click', function(){
     split_words = [];
     get_letters();
 
-    console.log(words_list);
+    console.log(words_list[0]);
     console.log(words_length);
     console.log(words_length_num);
 
