@@ -80,6 +80,9 @@ document.getElementById("begin").addEventListener('click', function(){
     words_list = [];
     split_words = [];
     get_letters();
+
+    console.log(words_list);
+    console.log(split_words);
     console.log(words_length);
     console.log(words_length_num);
 });
