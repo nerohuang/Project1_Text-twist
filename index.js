@@ -32,6 +32,7 @@ var get_words = function(rack){
 }
 
 var store_words = function(words_got){
+    words_show = [];
     for(var i = 0; i < words_got.length; i++){
       words_show.push(words_got[i].words);
     }
