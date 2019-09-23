@@ -77,7 +77,7 @@ var display_words = function(words_length, words_length_num){
     for (var i = 0; i < words_length.length; i++){
       //var textnode = document.createTextNode('The length of words:'+words_length[i]+'   The number of words remain:'+words_length_num[i]);
       //br.appendChild(textnode);
-      text = text + 'The length of words:'+words_length[i]+'   The number of words remain:'+words_length_num[i] + ' <br />';
+      text = text + 'The length of words:'+words_length[i]+'   The number of words remain:'+words_length_num[i] + '\r\n';
 
       //document.getElementById("word_display ").appendChild(br);
     }
