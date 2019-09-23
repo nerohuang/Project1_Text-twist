@@ -106,7 +106,7 @@ document.getElementById("submit_word").addEventListener('click', function(){
   console.log(words_length);
   console.log(words_length_num);
   var user_guess=document.getElementById("guessing_word").value;
-  if (words_list.indexOf(user_guess) != -1){
+  if (words_list.indexOf(user_guess.toUpperCase()) != -1){
     console.log('great');
   }
   console.log(user_guess);
