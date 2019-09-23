@@ -4,6 +4,9 @@ var words_length = [];
 var words_length_num=[];
 var correct_words='';
 
+
+
+//Get letters from random rack choose from datebase
 var get_letters = function(){
     var rack_request = new XMLHttpRequest();
     rack_request.onload = function(){
@@ -17,11 +20,14 @@ var get_letters = function(){
     rack_request.send();
 }
 
+
+//display the letters from rack
 var show_letters = function(rack_get){
     document.getElementById("showletter").innerText = rack_get.rack;
     get_words(rack_get.rack);
 }
 
+//Get words from datebase based on the letters
 var get_words = function(rack){
   var words_request = new XMLHttpRequest();
   words_request.onload = function(){
@@ -35,6 +41,7 @@ var get_words = function(rack){
   words_request.send();
 }
 
+//Store the words getting from datebase
 var store_words = function(words_got){
     for (var i = 0; i < words_got.length; i++){
       if (words_got[i].words.indexOf("@@")){
@@ -49,6 +56,7 @@ var store_words = function(words_got){
     count_words_length(words_list);
 }
 
+// Counting the possible words length from those words
 var count_words_length = function(words){
     var j = 0;
     //console.log(words);
@@ -71,6 +79,7 @@ var count_words_length = function(words){
   display_words(words_length, words_length_num);
 }
 
+//display the possible words length from those words and how many of them
 var display_words = function(words_length, words_length_num){
     var text ='';
     for (var i = 0; i < words_length.length; i++){
@@ -85,6 +94,7 @@ var display_words = function(words_length, words_length_num){
 
 }
 
+//start function
 var start = function(){
     words_length=[];
     words_length_num=[];
@@ -98,7 +108,7 @@ var start = function(){
 
 
 
-
+//start the game
 document.getElementById("begin").addEventListener('click', function(){
     start();
     console.log(words_list);
@@ -106,6 +116,8 @@ document.getElementById("begin").addEventListener('click', function(){
     console.log(words_length_num);
 });
 
+//check the enter words from user weather right or not
+//update the state of remain words
 document.getElementById("submit_word").addEventListener('click', function(){
 
 
