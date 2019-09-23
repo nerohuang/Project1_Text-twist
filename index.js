@@ -61,6 +61,7 @@ var count_words_length = function(words){
         words_length[j] = [words[i].toString().length];
         words_length_num[j] = 1;
         j++;
+        console.log(words_length);
       }
       else{
         console.log(words_length.indexOf(words[i].toString().length));
