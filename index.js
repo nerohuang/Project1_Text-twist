@@ -1,3 +1,4 @@
+var words_show = [];
 
 var get_letters = function(){
     var rack_request = new XMLHttpRequest();
@@ -21,13 +22,17 @@ var get_words = function(rack){
   var words_request = new XMLHttpRequest();
   words_request.onload = function(){
       if (this.status == 200){
-        console.log(this.response);
-        //showLetters(JSON.parse(this.response));
+        //console.log(this.response);
+        store_words(JSON.parse(this.response));
       }
       else console.log("No response");
   };
   words_request.open("GET", "words.php/"+rack);
   words_request.send();
+}
+
+var store_words = function(words_got){
+    console.log(words_got.length);
 }
 
 
