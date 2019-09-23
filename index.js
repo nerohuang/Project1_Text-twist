@@ -105,10 +105,15 @@ document.getElementById("submit_word").addEventListener('click', function(){
   console.log(words_length_num);
   var user_guess=document.getElementById("guessing_word").value;
   if (words_list.indexOf(user_guess.toUpperCase()) != -1){
+
     document.getElementById("TOF").innerText='Correct!';
+
+    console.log(words_length_num[words_length.indexOf(user_guess.length)]);
+    //words_length_num[words_length.indexOf(user_guess.length)]--;
+
   }
   else{
     document.getElementById("TOF").innerText='False!';
   }
-  console.log(user_guess);
+
 });
