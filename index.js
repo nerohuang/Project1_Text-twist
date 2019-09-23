@@ -85,8 +85,8 @@ document.getElementById("begin").addEventListener('click', function(){
     console.log(words_length);
     console.log(words_length_num);
 
-    var note = document.createElement("LI"); 
+    var note = document.createElement("LI");
     var textnode = document.createTextNode(words_length[0]);
     note.appendChild(textnode);
-    document.getElementById("word_display").appendChild(node);
+    document.getElementById("word_display").appendChild(note);
 });
