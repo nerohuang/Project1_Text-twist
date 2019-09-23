@@ -108,9 +108,9 @@ document.getElementById("submit_word").addEventListener('click', function(){
 
     document.getElementById("TOF").innerText='Correct!';
 
-    console.log(words_length_num[words_length.indexOf(user_guess.length)]);
-    //words_length_num[words_length.indexOf(user_guess.length)]--;
-
+    //console.log(words_length_num[words_length.indexOf(user_guess.length)]--);
+    words_length_num[words_length.indexOf(user_guess.length)]--;
+    display_words(words_length, words_length_num);
   }
   else{
     document.getElementById("TOF").innerText='False!';
