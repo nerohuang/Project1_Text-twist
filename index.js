@@ -1,6 +1,7 @@
 var words_list = [];
 var split_words = [];
 var words_length = [];
+var words_length_num=[];
 
 var get_letters = function(){
     var rack_request = new XMLHttpRequest();
@@ -64,17 +65,21 @@ var count_words_length = function(words){
         //console.log(words_length);
       }
       else{
-        console.log(words_length.indexOf(words[i].toString().length));
+        //console.log(words_length.indexOf(words[i].toString().length));
         words_length_num[words_length.indexOf(words[i].toString().length)]++;
       }
     }
-    console.log(words_length);
-    console.log(words_length_num);
+  //  console.log(words_length);
+  //  console.log(words_length_num);
 }
+
+
 
 
 
 
 document.getElementById("begin").addEventListener('click', function(){
     get_letters();
+    console.log(words_length);
+    console.log(words_length_num);
 });
