@@ -86,6 +86,13 @@ var display_words = function(words_length, words_length_num){
 }
 
 var start = function(){
+    words_length=[];
+    words_length_num=[];
+    words_list = [];
+    split_words = [];
+    correct_words=''
+    document.getElementById("TOF").innerText='';
+    document.getElementById("correct_word_display").innerText='';
     get_letters();
 }
 
@@ -93,10 +100,6 @@ var start = function(){
 
 
 document.getElementById("begin").addEventListener('click', function(){
-    words_length=[];
-    words_length_num=[];
-    words_list = [];
-    split_words = [];
     start();
     console.log(words_list);
     console.log(words_length);
@@ -105,7 +108,7 @@ document.getElementById("begin").addEventListener('click', function(){
 
 document.getElementById("submit_word").addEventListener('click', function(){
 
-  
+
   var total_words = words_list.length;
   var user_guess=document.getElementById("guessing_word").value;
   if (words_list.indexOf(user_guess.toUpperCase()) != -1){
