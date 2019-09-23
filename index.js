@@ -105,8 +105,7 @@ document.getElementById("submit_word").addEventListener('click', function(){
   console.log(words_length_num);
   var total_words = words_list.length;
   var user_guess=document.getElementById("guessing_word").value;
-  if (total_words >0){
-    if (words_list.indexOf(user_guess.toUpperCase()) != -1){
+  if (words_list.indexOf(user_guess.toUpperCase()) != -1){
 
       document.getElementById("TOF").innerText='Correct!';
 
@@ -119,8 +118,7 @@ document.getElementById("submit_word").addEventListener('click', function(){
     else{
       document.getElementById("TOF").innerText='False!';
     }
-  }
-  else{
+  if (total_words = 0){
     alert("You Won!");
   }
 });
