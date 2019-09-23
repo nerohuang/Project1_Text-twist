@@ -64,7 +64,7 @@ var count_words_length = function(words){
         console.log(words_length);
       }
       else{
-        console.log(words_length.indexOf(words[i].toString().length));
+        console.log(words_length[].indexOf(words[i].toString().length));
         //words_length[words_length.indexOf(words[i].toString().length)][1]++;
       }
     }
