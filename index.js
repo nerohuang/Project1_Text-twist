@@ -52,6 +52,7 @@ var store_words = function(words_got){
 var count_words_length = function(words){
     var j = 0;
     words_length=[];
+    console.log(words_length.indexOf(words[i].length);
     for (var i = 0; i < words.length; i++){
       if (words_length.indexOf(words[i].length) = -1){
         words_length[j] = [words[i].length, 1];
@@ -61,7 +62,7 @@ var count_words_length = function(words){
         words_length[words_length.indexOf(words[i].length)][1]++;
       }
     }
-    console.log(words_length);
+    //console.log(words_length);
 }
 
 
@@ -69,5 +70,4 @@ var count_words_length = function(words){
 
 document.getElementById("begin").addEventListener('click', function(){
     get_letters();
-    show_words_list();
 });
