@@ -55,7 +55,7 @@ var count_words_length = function(words){
     console.log(words);
 
     for (var i = 0; i < words.length; i++){
-      if (words_length.indexOf(words[i].toString().length) = -1){
+      if (words_length.indexOf(words[i].toString().length) == -1){
         words_length[j] = [words[i].toString().length, 1];
         j++;
       }
