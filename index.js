@@ -82,7 +82,8 @@ document.getElementById("begin").addEventListener('click', function(){
     get_letters();
 
     console.log(words_list);
-    console.log(split_words);
     console.log(words_length);
     console.log(words_length_num);
+
+    $("word_display").append("'<li>' + words_length[0] + ':' + words_length_num[0]");
 });
