@@ -52,15 +52,18 @@ var store_words = function(words_got){
 var count_words_length = function(words){
     var j = 0;
     words_length=[];
+    words_length_num=[];
     console.log(words);
 
     for (var i = 0; i < words.length; i++){
       if (words_length.indexOf(words[i].toString().length) == -1){
-        words_length[j] = [words[i].toString().length, 1];
+        console.log(words_length.indexOf(words[i].toString().length));
+        words_length[j] = [words[i].toString().length];
+        words_length_num[j] = 1;
         j++;
       }
       else{
-        console.log(words_length.indexOf(words[0].toString().length));
+        console.log(words_length.indexOf(words[i].toString().length));
         //words_length[words_length.indexOf(words[i].toString().length)][1]++;
       }
     }
