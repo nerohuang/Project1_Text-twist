@@ -2,6 +2,7 @@ var words_list = [];
 var split_words = [];
 var words_length = [];
 var words_length_num=[];
+var correct_words='';
 
 var get_letters = function(){
     var rack_request = new XMLHttpRequest();
@@ -97,13 +98,14 @@ document.getElementById("begin").addEventListener('click', function(){
     words_list = [];
     split_words = [];
     start();
+    console.log(words_list);
+    console.log(words_length);
+    console.log(words_length_num);
 });
 
 document.getElementById("submit_word").addEventListener('click', function(){
-  console.log(words_list);
-  console.log(words_length);
-  console.log(words_length_num);
-  var correct_words='';
+
+  
   var total_words = words_list.length;
   var user_guess=document.getElementById("guessing_word").value;
   if (words_list.indexOf(user_guess.toUpperCase()) != -1){
