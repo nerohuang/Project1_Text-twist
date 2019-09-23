@@ -1,5 +1,6 @@
 var words_list = [];
 var split_words = [];
+var words_length = [];
 
 var get_letters = function(){
     var rack_request = new XMLHttpRequest();
@@ -35,7 +36,7 @@ var get_words = function(rack){
 var store_words = function(words_got){
     words_list = [];
     split_words = [];
-    for(var i = 0; i < words_got.length; i++){
+    for (var i = 0; i < words_got.length; i++){
       if (words_got[i].words.indexOf("@@")){
         split_words = words_got[i].words.split("@@");
         for (var j = 0; j < split_words.length; j++){
@@ -45,14 +46,28 @@ var store_words = function(words_got){
       else{
         words_list.push(words_got[i].words);}
     }
-    console.log(words_list);
+    count_words_length(words_list);
+}
+
+var count_words_length = function(words){
+    var j = 0;
+    words_length=[];
+    for (var i = 0; i < words.length; i++){
+      if (words_length.indexOf(words[i].length) = -1){
+        words_length[j] = [words[i].length, 1];
+        j++;
+      }
+      else{
+        words_length[words_length.indexOf(words[i].length)][1]++;
+      }
+    }
+    console.log(words_length);
 }
 
 
 
 
-get_letters();
-
 document.getElementById("begin").addEventListener('click', function(){
     get_letters();
+    show_words_list();
 });
