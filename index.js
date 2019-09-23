@@ -106,5 +106,5 @@ document.getElementById("submit_word").addEventListener('click', function(){
   console.log(words_length);
   console.log(words_length_num);
   var user_guess=document.getElementById("guessing_word").value;
-  console.lag(user_guess);
+  console.log(user_guess);
 });
