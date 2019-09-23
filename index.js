@@ -35,7 +35,7 @@ var store_words = function(words_got){
     for(var i = 0; i < words_got.length; i++){
       words_show.push(words_got[i].words);
     }
-    console.log(words_got);
+    console.log(words_show);
 }
 
 
