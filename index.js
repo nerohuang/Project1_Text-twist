@@ -53,14 +53,15 @@ var count_words_length = function(words){
     var j = 0;
     words_length=[];
     console.log(words);
-    console.log(words_length.indexOf(words[0].toString().length));
+
     for (var i = 0; i < words.length; i++){
-      if (words_length.indexOf(words[i].length) = -1){
-        words_length[j] = [words[i].length, 1];
+      if (words_length.indexOf(words[i].toString().length) = -1){
+        words_length[j] = [words[i].toString().length, 1];
         j++;
       }
       else{
-        words_length[words_length.indexOf(words[i].length)][1]++;
+        console.log(words_length.indexOf(words[0].toString().length));
+        //words_length[words_length.indexOf(words[i].toString().length)][1]++;
       }
     }
     //console.log(words_length);
