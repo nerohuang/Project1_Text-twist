@@ -35,8 +35,6 @@ var get_words = function(rack){
 }
 
 var store_words = function(words_got){
-    words_list = [];
-    split_words = [];
     for (var i = 0; i < words_got.length; i++){
       if (words_got[i].words.indexOf("@@")){
         split_words = words_got[i].words.split("@@");
@@ -52,9 +50,7 @@ var store_words = function(words_got){
 
 var count_words_length = function(words){
     var j = 0;
-    words_length=[];
-    words_length_num=[];
-    console.log(words);
+    //console.log(words);
 
     for (var i = 0; i < words.length; i++){
       if (words_length.indexOf(words[i].toString().length) == -1){
@@ -79,6 +75,10 @@ var count_words_length = function(words){
 
 
 document.getElementById("begin").addEventListener('click', function(){
+    words_length=[];
+    words_length_num=[];
+    words_list = [];
+    split_words = [];
     get_letters();
     console.log(words_length);
     console.log(words_length_num);
