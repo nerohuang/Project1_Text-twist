@@ -103,18 +103,24 @@ document.getElementById("submit_word").addEventListener('click', function(){
   console.log(words_list);
   console.log(words_length);
   console.log(words_length_num);
+  var total_words = words_list.length;
   var user_guess=document.getElementById("guessing_word").value;
-  if (words_list.indexOf(user_guess.toUpperCase()) != -1){
+  if (total_words >0){
+    if (words_list.indexOf(user_guess.toUpperCase()) != -1){
 
-    document.getElementById("TOF").innerText='Correct!';
+      document.getElementById("TOF").innerText='Correct!';
 
-    //console.log(words_length_num[words_length.indexOf(user_guess.length)]--);
-    words_length_num[words_length.indexOf(user_guess.length)]--;
-    display_words(words_length, words_length_num);
-    words_list.splice(words_list.indexOf(user_guess.toUpperCase()),1);
+      //console.log(words_length_num[words_length.indexOf(user_guess.length)]--);
+      words_length_num[words_length.indexOf(user_guess.length)]--;
+      display_words(words_length, words_length_num);
+      words_list.splice(words_list.indexOf(user_guess.toUpperCase()),1);
+      total_words--;
+    }
+    else{
+      document.getElementById("TOF").innerText='False!';
+    }
   }
   else{
-    document.getElementById("TOF").innerText='False!';
+    alert("You Won!");
   }
-
 });
