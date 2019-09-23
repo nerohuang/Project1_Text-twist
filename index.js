@@ -114,6 +114,7 @@ document.getElementById("submit_word").addEventListener('click', function(){
       display_words(words_length, words_length_num);
       words_list.splice(words_list.indexOf(user_guess.toUpperCase()),1);
       total_words--;
+      count.log(total_words);
     }
     else{
       document.getElementById("TOF").innerText='False!';
