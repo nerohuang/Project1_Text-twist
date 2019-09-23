@@ -1,4 +1,4 @@
-var words_show = [];
+var words_list = [];
 
 var get_letters = function(){
     var rack_request = new XMLHttpRequest();
@@ -32,11 +32,15 @@ var get_words = function(rack){
 }
 
 var store_words = function(words_got){
-    words_show = [];
+    words_list = [];
     for(var i = 0; i < words_got.length; i++){
-      words_show.push(words_got[i].words);
+      if (words_got[i].indexOf("@@")){
+        words_list.push(words_got[i].split("@@"));
+      }
+      else{
+        words_list.push(words_got[i].words);}
     }
-    console.log(words_show);
+    console.log(words_list);
 }
 
 
