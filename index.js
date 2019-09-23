@@ -72,7 +72,7 @@ var count_words_length = function(words){
 
 var display_words = function(words_length, words_length_num){
     var note = document.createElement("LI");
-    var textnode = document.createTextNode(words_length[0]);
+    var textnode = document.createTextNode(words_length[0]+'         '+words_length_num[0]);
     note.appendChild(textnode);
     document.getElementById("word_display").appendChild(note);
 }
