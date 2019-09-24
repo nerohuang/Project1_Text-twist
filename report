@@ -1,0 +1,27 @@
+Project 1: Text-twist clone report
+Xingyu Huang
+My project is a Text-twist game running on website.
+
+You can go to https://project1-text-twist.herokuapp.com/ to play it.
+If you want to actually run it, you need to upload these files and create a new
+repository at Github, then create a Heroku account and linked to your GitHub
+account, then create a new app, choose the repository and deploys it.
+
+I worked with myself and I took like 15 hours to finished it.
+The 'a-ha' moment was I finally figure out how to get all the words from
+database depends on the specific rack. That thing obstructs me like 1 or 2 hours.
+I tangle on how to use one query request to get the rack and get all the words.
+I try lots of queries but not worked. Then, I finally figure out I don't need to
+finished at one request PHP or one query, so I divided into two parts: the first
+part is requiring the rack and the second is using the rack to request the words.
+
+I wish I could improve my js programming part. Although I finished the program,
+I use lots of stupid ways and make code looks very bloated. I hope I can write
+the code more cleanly and beautifully.
+I also want to add some CSS to make UI more beautiful, add the scoring system
+and save/load system.
+I think I need more 5 to 10 hours to finish the imporve.
+The overall impression of the experience is very great for me. Because I didn't
+write HTML/js/php very long time and it helps me remember something, it can help
+me in the future class.
+The skill I need to improve still is programming skill.
